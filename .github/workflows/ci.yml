@@ -8,13 +8,13 @@ on:
     paths:
       - src/**
       - tests/**
-      pull_request:
-        branches:
-          - main
+  pull_request:
+      branches:
+        - main
       types: 
-        - opened
-        - synchronize
-        - reopened
+          - opened
+          - synchronize
+          - reopened
       paths:
         - src/**
         - tests/**
