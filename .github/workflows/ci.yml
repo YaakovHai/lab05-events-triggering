@@ -1,15 +1,25 @@
 name: CI
 
 on:
-  workflow_dispatch:
-    types:
-      - opened
-      - synchronize
-      - reopened
+  push:
+    branches:
+      - main
+      - develop
     paths:
-      - 'src/**'
-      - 'tests/**'
-
+      - src/**
+      - tests/**
+      pull_request:
+        branches:
+          - main
+      types: 
+        - opened
+        - synchronize
+        - reopened
+      paths:
+        - src/**
+        - tests/**
+        
+        
 jobs:
   lint:
     name: Lint
